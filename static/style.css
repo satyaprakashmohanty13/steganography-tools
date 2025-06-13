@@ -1,0 +1,100 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.forms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.form-box {
+    flex: 1 1 350px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.form-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.flash-messages {
+    margin-bottom: 15px;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+.flash.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
