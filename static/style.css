@@ -1,4 +1,6 @@
-/* Basic reset */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,105 +8,154 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1a001f, #000000);
+    color: #f1eaff;
     line-height: 1.6;
     padding: 20px;
 }
 
+/* Container Box */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: rgba(30, 0, 40, 0.4);
+    padding: 35px 45px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(128, 0, 128, 0.3);
 }
 
+/* Headings */
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e0b3ff;
+    margin-bottom: 30px;
 }
 
+h2 {
+    color: #d69bff;
+}
+
+/* Credit Info */
 .credit-info {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
 }
 
+#timer {
+    font-weight: bold;
+    color: #bb86fc;
+}
+
+/* Forms */
 .forms {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: space-between;
 }
 
 .form-box {
-    flex: 1 1 350px;
-    background: #fafafa;
-    padding: 15px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
+    flex: 1 1 400px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-box h2 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+.form-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(186, 85, 211, 0.5);
 }
 
+/* Labels and Inputs */
 label {
     display: block;
-    margin-top: 10px;
-    margin-bottom: 4px;
-    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #e0d1ff;
 }
 
 input[type="file"],
 textarea {
     width: 100%;
-    padding: 6px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 2px solid #3a003a;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #1e0e28;
+    color: #fff;
 }
 
+textarea {
+    resize: vertical;
+}
+
+/* Buttons */
 button {
-    background: #007bff;
-    color: #fff;
+    background: linear-gradient(135deg, #8a2be2, #6a0dad);
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 14px 22px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-}
-
-button[disabled] {
-    background: #aaa;
-    cursor: not-allowed;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
 }
 
 button:hover:not([disabled]) {
-    background: #0056b3;
+    background: linear-gradient(135deg, #b266ff, #800080);
+    transform: scale(1.03);
 }
 
+button[disabled] {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* Flash messages */
 .flash-messages {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .flash {
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    border: 1px solid;
 }
 
 .flash.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background: #4b0000;
+    color: #ffcccc;
+    border-color: #ff4d4d;
 }
 
 .flash.info {
-    background: #d1ecf1;
-    color: #0c5460;
-    border: 1px solid #bee5eb;
+    background: #1b1b2f;
+    color: #c2e9fb;
+    border-color: #5dade2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .forms {
+        flex-direction: column;
+    }
+
+    .form-box {
+        flex: 1 1 100%;
+    }
 }
