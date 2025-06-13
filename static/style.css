@@ -27,6 +27,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+.credit-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .forms {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +78,12 @@ button {
     font-size: 1rem;
 }
 
-button:hover {
+button[disabled] {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+button:hover:not([disabled]) {
     background: #0056b3;
 }
 
