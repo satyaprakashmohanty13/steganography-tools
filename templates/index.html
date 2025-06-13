@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Image Steganography</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, msg in messages %}
+                    <div class="flash {{ category }}">{{ msg }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        <div class="forms">
+            <div class="form-box">
+                <h2>Encode Message into Image</h2>
+                <form action="{{ url_for('encode_route') }}" method="post" enctype="multipart/form-data">
+                    <label for="image_encode">Select image:</label><br />
+                    <input type="file" id="image_encode" name="image" accept="image/*" required /><br />
+
+                    <label for="message">Message to hide:</label><br />
+                    <textarea id="message" name="message" rows="4" required></textarea><br />
+
+                    <button type="submit">Encode & Download</button>
+                </form>
+            </div>
+
+            <div class="form-box">
+                <h2>Decode Message from Image</h2>
+                <form action="{{ url_for('decode_route') }}" method="post" enctype="multipart/form-data">
+                    <label for="image_decode">Select image:</label><br />
+                    <input type="file" id="image_decode" name="image" accept="image/*" required /><br />
+
+                    <button type="submit">Decode</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
